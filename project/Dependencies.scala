@@ -12,4 +12,8 @@ object Dependencies {
     lazy val core = "org.tpolecat" %% "doobie-core" % "0.8.8"
     lazy val postgres = "org.tpolecat" %% "doobie-postgres" % "0.8.8"
   }
+
+  object Zio {
+    lazy val zio = "dev.zio" %% "zio" % "1.0.0-RC21-2"
+  }
 }
