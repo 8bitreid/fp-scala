@@ -7,7 +7,6 @@ import com.typesafe.scalalogging.StrictLogging
 import doobie.free.connection.ConnectionIO
 import doobie.util.transactor.Transactor
 import zio.Task
-import zio.interop.catz._
 
 trait DataBase {
   // needs a connection
@@ -20,7 +19,8 @@ trait DataBase {
 
 class BillsDb() extends DataBase with StrictLogging {
 
-  // Need a Transactor
+  // Need a Transactor and Doobie here needs zio.ineterop.catz implicits
+  import zio.interop.catz._
   val transactor: Transactor[Task] = Transactor.fromDriverManager(
     "org.postgresql.Driver",
     "jdbc:postgresql:fp",
