@@ -21,6 +21,7 @@ lazy val root = (project in file("."))
         SoftwareMill.swaggerUi,
         Zio.interopCats,
         Zio.zio,
+        Zio.streams,
         scalaTest % Test
       )
   )

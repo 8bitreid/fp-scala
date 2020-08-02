@@ -26,7 +26,9 @@ object Dependencies {
   }
 
   object Zio {
-    lazy val zio = "dev.zio" %% "zio" % "1.0.0-RC21-2"
+    private val zioVersion = "1.0.0-RC21-2"
+    lazy val zio = "dev.zio" %% "zio" % zioVersion
     lazy val interopCats = "dev.zio" %% "zio-interop-cats" % "2.0.0.0-RC13"
+    lazy val streams = "dev.zio" %% "zio-streams" % zioVersion
   }
 }
