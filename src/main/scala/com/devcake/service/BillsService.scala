@@ -4,14 +4,15 @@ import java.util.UUID
 
 import com.devcake.db.DataBase
 import com.devcake.models.Bill
+import com.typesafe.scalalogging.StrictLogging
 
 trait Service {
   def getBills(ids: List[UUID]): Option[List[Bill]]
   def getBill(id: UUID): Option[Bill]
 }
 
-class BillsService(db: DataBase) extends Service {
+class BillsService(db: DataBase) extends Service with StrictLogging {
 
-  def getBills(ids: List[UUID]): Option[List[Bill]] = db.getBills(ids)
-  def getBill(id: UUID): Option[Bill] = db.getBillById(id)
+  def getBills(ids: List[UUID]): Option[List[Bill]] = ???
+  def getBill(id: UUID): Option[Bill] = ???
 }

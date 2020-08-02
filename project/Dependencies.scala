@@ -3,17 +3,30 @@ import sbt._
 object Dependencies {
   lazy val scalaTest = "org.scalatest" %% "scalatest" % "3.1.1"
 
+  object Doobie {
+    val doobieVersion = "0.9.0"
+    lazy val core = "org.tpolecat" %% "doobie-core" % doobieVersion
+    lazy val postgres = "org.tpolecat" %% "doobie-postgres" % doobieVersion
+    lazy val quill = "org.tpolecat" %% "doobie-quill" % doobieVersion
+    lazy val hikari = "org.tpolecat" %% "doobie-hikari" % doobieVersion
+  }
+
   object Logging {
     lazy val logger = "com.typesafe.scala-logging" %% "scala-logging" % "3.9.2"
     lazy val logback = "ch.qos.logback" % "logback-classic" % "1.2.3"
   }
 
-  object Doobie {
-    lazy val core = "org.tpolecat" %% "doobie-core" % "0.8.8"
-    lazy val postgres = "org.tpolecat" %% "doobie-postgres" % "0.8.8"
+  object SoftwareMill {
+    val tapirVersion = "0.14.5"
+    lazy val tapir = "com.softwaremill.sttp.tapir" %% "tapir-json-circe" % tapirVersion
+    lazy val http4sServer ="com.softwaremill.sttp.tapir" %% "tapir-http4s-server" % tapirVersion
+    lazy val openapiDocs = "com.softwaremill.sttp.tapir" %% "tapir-openapi-docs" % tapirVersion
+    lazy val openapiCirceYaml = "com.softwaremill.sttp.tapir" %% "tapir-openapi-circe-yaml" % tapirVersion
+    lazy val swaggerUi = "com.softwaremill.sttp.tapir" %% "tapir-swagger-ui-http4s" % tapirVersion
   }
 
   object Zio {
     lazy val zio = "dev.zio" %% "zio" % "1.0.0-RC21-2"
+    lazy val interopCats = "dev.zio" %% "zio-interop-cats" % "2.0.0.0-RC13"
   }
 }
