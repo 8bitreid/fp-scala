@@ -11,13 +11,19 @@ object Dependencies {
     lazy val hikari = "org.tpolecat" %% "doobie-hikari" % doobieVersion
   }
 
+  object Joda {
+    lazy val time = "joda-time" % "joda-time" % "2.9.3"
+    lazy val org = "org.joda" % "joda-convert" % "1.8"
+
+  }
+
   object Logging {
     lazy val logger = "com.typesafe.scala-logging" %% "scala-logging" % "3.9.2"
     lazy val logback = "ch.qos.logback" % "logback-classic" % "1.2.3"
   }
 
   object SoftwareMill {
-    val tapirVersion = "0.14.5"
+    private val tapirVersion = "0.14.5"
     lazy val tapir = "com.softwaremill.sttp.tapir" %% "tapir-json-circe" % tapirVersion
     lazy val http4sServer ="com.softwaremill.sttp.tapir" %% "tapir-http4s-server" % tapirVersion
     lazy val openapiDocs = "com.softwaremill.sttp.tapir" %% "tapir-openapi-docs" % tapirVersion
@@ -26,9 +32,9 @@ object Dependencies {
   }
 
   object Zio {
-    private val zioVersion = "1.0.0-RC21-2"
-    lazy val zio = "dev.zio" %% "zio" % zioVersion
+    private val zioVersion = "1.0.0"
     lazy val interopCats = "dev.zio" %% "zio-interop-cats" % "2.0.0.0-RC13"
     lazy val streams = "dev.zio" %% "zio-streams" % zioVersion
+    lazy val zio = "dev.zio" %% "zio" % zioVersion
   }
 }

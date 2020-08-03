@@ -12,6 +12,8 @@ lazy val root = (project in file("."))
         Doobie.core,
         Doobie.postgres,
         Doobie.quill,
+        Joda.time,
+        Joda.org,
         Logging.logger,
         Logging.logback,
         SoftwareMill.http4sServer,
