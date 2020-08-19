@@ -1,7 +1,9 @@
 package com.devcake
 
+import java.util.UUID
+
 package object models {
-// TODO get UUID and DateTimes here...
-case class Bill(id: Int, name: String, amount: Double, paid: Boolean)
+  // TODO get UUID and DateTimes here...
+  case class Bill(id: UUID, name: String, amount: Double, due: String, paid: Boolean)
 
 }
